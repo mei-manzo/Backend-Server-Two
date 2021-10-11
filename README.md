@@ -3,7 +3,7 @@ Welcome! This is the second backend server for the Rules/Apps solution. You will
 
 Instructions:
 
-You will need to configure the server with your client credentials so that the app. Go into index.js and update the following with your information:
+You will need to configure the server with your client credentials so that the app renders your company's data. Go into index.js and update the following with your information:
 
 var auth0 = new ManagementClient({
     domain: 'YOUR_DOMAIN',
@@ -24,13 +24,9 @@ var auth0 = new AuthenticationClient({
 ---
 
 var options = { method: 'POST',
-
     url: 'YOUR_DOMAIN',
-
     headers: { 'content-type': 'application/json' },
-    
     body: '{"client_id":"YOUR_CLIENT_ID","client_secret":"YOUR_CLIENT_SECRET",
-    
     "audience":"YOUR_API_DOMAIN","grant_type":"client_credentials"}' };
 
 
@@ -38,13 +34,11 @@ Also make sure to update your .env file with the following fields:
 
 
 DEV_PORT=7001
-
 PROD_PORT=7000
-
 AUTH0_ISSUER_BASE_URL="YOUR_DOMAIN"
-
 AUTH0_CLIENT_ID="YOUR_AUTH0_CLIENT_ID"
-
 BASE_URL=http://localhost:7000
-
 SESSION_SECRET= "YOUR_SESSION_SECRET"
+
+
+To run the server, use "npm run dev" and your server should begin sending your management API data over to the frontend app!
